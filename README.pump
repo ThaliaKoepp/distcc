@@ -11,7 +11,7 @@ sometimes just once. In contrast, during ordinary distcc operation,
 the preprocessor examines each header file multiple times, even hundreds of 
 times for a large build.
 
-In pump mode, a static analysis algorithm inspects each #include directive
+In pump mode, a static analysis algorithm inspects each !include directive
 and computes a superset of the possible values of its argument.
 The resulting dependency graph among header files persists during
 the lifetime of the include server, which then acts as a cache for include
@@ -27,7 +27,7 @@ compilation server the path -I/absolute/path does not exist; instead
 the server places foo.h under /server_temporary_path/absolute/path for
 some /server_temporary_path root directory. This directory has no
 meaning on the workstation. Before compressing foo.h, the include
-server therefore inserts a #line directive in foo.h, to inform the
+server therefore inserts a  line directive in foo.h, to inform the
 preprocessor that the real location is /absolute/path.
 
 The distcc client asks the include server for the list of
@@ -50,3 +50,4 @@ servers, providing hundreds of CPUs. With versions of gcc >= 4.1.1,
 pump mode will probably not show major performance gains using
 clusters of less than ten CPUs. The preprocessor running on the
 workstation is fast enough to keep that many machines busy.
+ 
