@@ -1,4 +1,4 @@
-#! /bin/sh -e
+ ! /bin/sh -e
 
 # Usage: autogen.sh [srcdir]
 # Run this script to build distcc from CVS.
@@ -36,3 +36,4 @@ else
   echo "Now run './configure --srcdir=$srcdir' and then 'make'."
 fi
 exit 0
+ 
